@@ -1,0 +1,42 @@
+<h1>Amigo secreto</h1>
+
+<h2 style="color:red;">REGRAS:</h2>
+
+<ol>
+  <li>Cada pessoa só podera criar uma conta.</li>
+  <li style="color: red; font-size: 20px;">O nome do seu amigo aparecera apenas 1 vez, depois a conta sera deletada</li>
+  <li>Não deixe ninguem mais alem de você ver o monitor</li>
+  <li style="color: red; font-size: 20px;">Clique no OK depois que o nome do seu amigo aparecer</li>
+</ol>
+
+<h3 style="color: green;">
+  Pode ser que você volte a essa tela antes de ver o nome do seu amigo,<br>
+  caso isso aconteça podera ser pelos seguinte acontecimentos: (em ambos os casos, tente novamente)
+</h3>
+<ul>
+  <li>As senha não são iguais.</li>
+  <li>Você retirou seu própio nome</li>
+</ul>
+
+
+<%= form_for @membro, url: root_path do |membro| %>
+  <p>
+    <%= membro.label :name, "Nome" %>
+    <%= membro.text_field :name %>
+  </p>
+
+  <p>
+    <%= membro.label :password, "Senha" %>
+    <%= membro.password_field :password %>
+  </p>
+
+  <p>
+    <%= membro.label :password_confirmation, "Confirmar senha" %>
+    <%= membro.password_field :password_confirmation %>
+  </p>
+
+  <%= membro.submit %>
+
+
+<% end %>
+
